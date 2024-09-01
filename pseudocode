@@ -1,0 +1,30 @@
+// this will be a game of rock paper scissors
+// there will be a text box where the user enters rock, paper, or scissors
+// after clicking a button the computer will randomly choose between the options of rock, paper, or scissors
+// if user does scissors
+//   return win if computer picks paper 
+
+//else if computer picks sissors 
+//return draw
+
+//   else 
+//   return loss 
+
+// if user does paper
+//   return win if computer picks rock 
+
+//else if computer picks paper 
+//return draw
+
+//   else 
+//   return loss 
+// if user does rock
+//   return win if computer picks scissors 
+
+//else if computer picks rock 
+//return draw
+
+//   else 
+//   return loss 
+
+  
