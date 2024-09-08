@@ -23,41 +23,8 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-
-
-    if (humanScore > computerScore) {
-        console.log(`You win the game! Final score - Human: ${humanScore}, Computer: ${computerScore}`);
-    } else if (computerScore > humanScore) {
-        console.log(`Computer wins the game! Final score - Human: ${humanScore}, Computer: ${computerScore}`);
-    } else {
-        console.log(`The game is a draw! Final score - Human: ${humanScore}, Computer: ${computerScore}`);
-    }
-
-playRound(5)
-
-const but1 = document.createElement("button");
-but1.addEventListener("click", function(){
-    playround("Rock");
-});
-const but2 = document.createElement("button");
-but2.addEventListener("click", function(){
-    playround("Paper");
-});
-const but3 = document.createElement("button");
-but3.addEventListener("click", function(){
-    playround("Scissors");
-});
-
 const div1 = document.createElement("div");
 document.body.appendChild(div1);
-
-if (humanScore > computerScore) {
-    div1.textContent = `You win the game! Final score - Human: ${humanScore}, Computer: ${computerScore}`;
-} else if (computerScore > humanScore) {
-    div1.textContent =`Computer wins the game! Final score - Human: ${humanScore}, Computer: ${computerScore}`;
-} else {
-    div1.textContent =`The game is a draw! Final score - Human: ${humanScore}, Computer: ${computerScore}`;
-}
 
 let humanScore = 0;
 let computerScore = 0;
@@ -82,4 +49,42 @@ function disableButtons() {
     but2.disabled = true;
     but3.disabled = true;
 }
+
+function playWithSelection(selection) {
+    const computerChoice = getComputerChoice();
+    const result = playRound(selection, computerChoice);
+
+    if (result === "You win!"){
+        humanScore++;
+    }
+    else if (result === "You lose"){
+        computerScore++;
+    }
+    else{
+        
+    }
+    updateDisplay(result);
+    checkGameEnd();
+}
+const but1 = document.createElement("button");
+but1.textContent = "Rock";
+but1.addEventListener("click", function() {
+    playWithSelection("Rock");
+});
+document.body.appendChild(but1);
+
+const but2 = document.createElement("button");
+
+but2.textContent = "Paper";
+but2.addEventListener("click", function() {
+    playWithSelection("Paper");
+});
+document.body.appendChild(but2);
+
+const but3 = document.createElement("button");
+but3.textContent = "Scissors";
+but3.addEventListener("click", function() {
+    playWithSelection("Scissors");
+});
+document.body.appendChild(but3);
 
